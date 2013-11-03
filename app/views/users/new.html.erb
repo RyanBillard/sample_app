@@ -2,26 +2,10 @@
 <h1>Sign up</h1>
 
 <div class="row-fluid">
-  <div class="span6 offset3"  style="text-align:center">
+  <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
-
-      <%= render 'shared/error_messages' %>
-      	
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "input-xlarge"%>
-      
-
-      <%= f.label :email %>
-      <%= f.text_field :email, class: "input-xlarge" %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "input-xlarge" %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: "input-xlarge" %>
-      <div>
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-  	  </div>
+      <%= render 'fields', f: f%>
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>  
     <% end %>
   </div>
 </div>
